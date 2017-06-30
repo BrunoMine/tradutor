@@ -44,12 +44,14 @@ local lista = {
 	{"default:book",					"Livro"},
 	{"default:book_written",				"Livro usado"},
 	{"default:coal_lump",					"Carvao"},
+	{"default:tin_lump",					"Estanho Bruto"},
 	{"default:iron_lump",					"Ferro Bruto"},
 	{"default:copper_lump",					"Cobre Bruto"},
 	{"default:mese_crystal",				"Cristal de Mese"},
 	{"default:gold_lump",					"Ouro Bruto"},
 	{"default:diamond",					"Diamante"},
 	{"default:clay_lump",					"Argila Fresca"},
+	{"default:tin_ingot",					"Barra de Estanho"},
 	{"default:steel_ingot",					"Barra de Ferro"},
 	{"default:copper_ingot",				"Barra de Cobre"},
 	{"default:bronze_ingot",				"Barra de Bronze"},
@@ -60,12 +62,15 @@ local lista = {
 	{"default:obsidian_shard",				"Caco de Obsidiana"},
 	{"default:skeleton_key",				"Chave Lisa"},
 	{"default:key",						"Chave"},
+	{"default:flint",					"Pederneira"},
 	-- nodes
 	{"default:stone",					"Pedra"},
+	{"default:tinblock",					"Bloco de Estanho"},
 	{"default:stone_block",					"Bloco de Pedra"},
 	{"default:desert_stone",				"Pedra do Deserto"},
 	{"default:desert_cobble",				"Pedregulho do Deserto"},
 	{"default:stone_with_coal",				"Pedra com Carvao"},
+	{"default:stone_with_tin",				"Pedra com Estanho"},
 	{"default:stone_with_iron",				"Pedra com Ferro"},
 	{"default:stone_with_copper",				"Pedra com Cobre"},
 	{"default:stone_with_mese",				"Pedra com Mese"},
@@ -173,6 +178,16 @@ local lista = {
 	{"default:coral_skeleton",				"Esqueleto de Coral"},
 	{"default:coral_brown",					"Coral Marrom"},
 	{"default:coral_orange",				"Coral Laranja"},
+	{"default:silver_sand",					"Areia Prateada"},
+	{"default:silver_sandstone",				"Arenito Prateado"},
+	{"default:silver_sandstone_brick",			"Tijolos de Arenito Prateado"},
+	{"default:silver_sandstone_block",			"Bloco de Arenito Prateado"},
+	{"default:desert_sandstone",				"Arenito do Deserto"},
+	{"default:desert_sandstone_brick",			"Tijolos de Arenito do Deserto"},
+	{"default:desert_sandstone_block",			"Bloco de Arenito do Deserto"},
+	{"default:mese_post_light",				"Poste de Luminaria Mese"},
+	{"default:junglegrass",					"Arbusto Selvagem"},
+	{"default:dirt_with_rainforest_litter",			"Terra com Lodo de Selva"},
 	-- tools	
 	{"default:pick_wood",					"Picareta de Madeira"},
 	{"default:pick_stone",					"Picareta de Pedra"},
@@ -304,7 +319,23 @@ local lista = {
 	{"stairs:stair_copperblock",				"Degrau de Bloco de Cobre"},
 	{"stairs:stair_bronzeblock",				"Degrau de Bloco de Bronze"},
 	{"stairs:stair_goldblock",				"Degrau de Bloco de Ouro"},
+	{"stairs:stair_silver_sandstone",			"Degrau de Arenito Prateado"},
+	{"stairs:stair_silver_sandstone_brick",			"Degrau de Tijolos de Arenito Prateado"},
+	{"stairs:stair_silver_sandstone_block",			"Degrau de Bloco de Arenito Prateado"},
+	{"stairs:stair_desert_sandstone",			"Degrau de Arenito do Deserto"},
+	{"stairs:stair_desert_sandstone_brick",			"Degrau de Tijolos de Arenito do Deserto"},
+	{"stairs:stair_desert_sandstone_block",			"Degrau de Bloco de Arenito do Deserto"},
+	{"stairs:stair_snowblock",				"Degrau de Neve"},
+	{"stairs:stair_ice",					"Degrau de Gelo"},
 	
+	{"stairs:slab_ice",					"Placa de Gelo"},
+	{"stairs:slab_snowblock",				"Placa de Neve"},
+	{"stairs:slab_silver_sandstone",			"Placa de Arenito Prateado"},
+	{"stairs:slab_silver_sandstone_brick",			"Placa de Tijolos de Arenito Prateado"},
+	{"stairs:slab_silver_sandstone_block",			"Placa de Bloco de Arenito Prateado"},
+	{"stairs:slab_desert_sandstone",			"Placa de Arenito do Deserto"},
+	{"stairs:slab_desert_sandstone_brick",			"Placa de Tijolos de Arenito do Deserto"},
+	{"stairs:slab_desert_sandstone_block",			"Placa de Bloco de Arenito do Deserto"},
 	{"stairs:slab_wood",					"Placa de Madeira"},
 	{"stairs:slab_junglewood",				"Placa de Madeira Selvagem"},
 	{"stairs:slab_pinewood",				"Placa de Madeira de Pinheiro"},
@@ -351,7 +382,10 @@ local lista = {
 	{"wool:red",						"Tecido Vermelho"},
 	{"wool:magenta",					"Tecido Magenta"},
 	{"wool:pink",						"Tecido Rosa"},
-
+	
+	-- fire
+	{"fire:flint_and_steel",				"Pederneira e Ferro"},
+	
 	-- vessels
 	{"vessels:glass_bottle",				"Pote de Vidro"},
 	{"vessels:drinking_glass",				"Como de Vidro"},
@@ -367,6 +401,11 @@ local lista = {
 	{"walls:cobble",					"Muro de Pedregulho"},
 	{"walls:mossycobble",					"Muro de Pedregulho com Musgo"},
 	{"walls:desertcobble",					"Muro de Pedregulho do Deserto"},
+	
+	-- carts
+	{"carts:cart",						"Carrinho (Agachar+Click para pegar)"},
+	{"carts:powerrail",					"Trilho de Impulso"},
+	{"carts:brakerail",					"Trilho de Freio"},
 	
 	
 	-- creatures
@@ -396,6 +435,9 @@ local lista = {
 	{"3d_armor:chestplate_steel",				"Peitoral de Ferro"},
 	{"3d_armor:leggings_steel",				"Perneira de Ferro"},
 	{"3d_armor:boots_steel",				"Botas de Ferro"},
+	
+	-- ItemFrames
+	{"itemframes:frame",					"Mostruario"},
 	
 }
 
