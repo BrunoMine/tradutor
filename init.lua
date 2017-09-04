@@ -439,6 +439,12 @@ local lista = {
 	-- ItemFrames
 	{"itemframes:frame",					"Mostruario"},
 	
+	-- Hardtorch
+	{"hardtorch:torch",					"Tocha (usada)"},
+	{"hardtorch:torch_on",					"Tocha Acesa"},
+	{"hardtorch:lamp",					"Lamparina a Oleo"},
+	{"hardtorch:lamp_on",					"Lamparina a Oleo Acesa"},
+	{"hardtorch:oil",					"Oleo Combustivel"},
 }
 
 -- Efetuar traduções
